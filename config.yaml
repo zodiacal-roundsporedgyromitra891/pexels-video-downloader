@@ -1,0 +1,127 @@
+# =============================================================================
+# Pexels Video Downloader — configuration
+# =============================================================================
+# Edit this file to control what gets downloaded. No code changes needed.
+# API key stays in .env (never commit it).
+#
+# Get a free key: https://www.pexels.com/api/
+# =============================================================================
+
+# --- Download settings -------------------------------------------------------
+settings:
+  # How many videos to download per category (unless a category sets its own)
+  per_category: 10
+
+  # portrait | landscape | square
+  orientation: portrait
+
+  # Optional Pexels size filter: large (4K) | medium (Full HD) | small (HD)
+  # Leave empty ("") to allow any size.
+  size: ""
+
+  # Keep only clips whose duration (seconds) falls in this range
+  min_duration: 4
+  max_duration: 15
+
+  # Prefer the MP4 file closest to this resolution
+  preferred_width: 1080
+  preferred_height: 1920
+
+  # Pause between API requests (free tier ≈ 200 requests/hour)
+  request_delay_seconds: 1.2
+
+  # Where videos and LIBRARY.md are written
+  output_dir: downloads
+
+  # Resume / dedupe state file (safe to delete to start fresh)
+  state_file: download_state.json
+
+# --- Categories --------------------------------------------------------------
+# Each category becomes a subfolder under output_dir.
+# - folder:      directory name (use kebab-case)
+# - description: shown in LIBRARY.md (optional but recommended)
+# - count:       optional override of settings.per_category
+# - queries:     Pexels search terms (multiple queries = more variety)
+
+categories:
+  - folder: people-laughing
+    description: Friends, couples, and groups laughing.
+    queries:
+      - friends laughing
+      - people laughing together
+      - couple laughing
+      - group laughing outdoors
+
+  - folder: walking-street
+    description: People walking through city streets.
+    queries:
+      - woman walking city street
+      - man walking sidewalk
+      - people walking street portrait
+      - walking through city
+
+  - folder: people-talking
+    description: Conversations and discussion.
+    queries:
+      - people talking outdoors
+      - friends talking cafe
+      - conversation between friends
+      - people discussing
+
+  - folder: thinking-reflection
+    description: Quiet reflection and thoughtful pauses.
+    queries:
+      - person thinking window
+      - woman looking thoughtful
+      - man reflecting alone
+      - looking out window city
+
+  - folder: alone-solitude
+    description: One person alone — calm isolation.
+    queries:
+      - person alone city
+      - walking alone at night
+      - sitting alone cafe
+      - solitude outdoors
+
+  - folder: crowd-city
+    description: Busy sidewalks and urban crowds.
+    queries:
+      - busy city street crowd
+      - people crossing street
+      - crowded sidewalk
+      - city pedestrian traffic
+
+  - folder: cafe-social
+    description: Cafes and casual social settings.
+    queries:
+      - people in cafe
+      - coffee shop atmosphere
+      - friends cafe
+      - working in cafe
+
+  - folder: night-city
+    description: Evening and night city mood.
+    queries:
+      - city night lights
+      - walking city night
+      - neon city street
+      - evening city skyline
+
+  - folder: nature-calm
+    description: Calm nature b-roll.
+    queries:
+      - calm forest trees
+      - gentle ocean waves
+      - leaves in wind
+      - peaceful lake
+
+  - folder: abstract-mood
+    description: Neutral mood pool — clouds, textures, soft motion.
+    queries:
+      - slow clouds sky
+      - clouds over city
+      - soft light abstract
+      - rain on window
+      - smoke atmospheric
+      - water ripples surface
